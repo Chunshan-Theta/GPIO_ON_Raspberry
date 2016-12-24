@@ -7,59 +7,62 @@ import sys
 
 
 class GpioForLights:
-	self.AlertOn = 0
-	self.ledPin = 12
 	def __init__(self,PinNum,Alert=0):
 		#initialization :set output pin
-		self.ledPin = PinNum
-		GPIO.setup(ledPin, GPIO.OUT)
+		self.ledPin = int(PinNum)
+		GPIO.setmode(GPIO.BOARD)
+		GPIO.setup(self.ledPin, GPIO.OUT)
+		GPIO.setwarnings(False)
+		#initialization : Alert
+		self.AlertOn = Alert
 
 		#initialization : Pin off
-		off()
+		self.off()
 
 		#alert text	
-		self.AlertOn = Alert
+		
 		if self.AlertOn:
-			print "Setup Pin "+ledPin+" is OutPut..."
+			print "Setup Pin "+str(self.ledPin)+" is OutPut..."
 
 
 	def on(self):		
-  		GPIO.output(self.ledPin, True)
+  		GPIO.output(self.ledPin, False)
 
 		#alert text
 		if self.AlertOn:
 			print "Set Output On"
 	def off(self):		
-  		GPIO.output(self.ledPin, False)
+  		GPIO.output(self.ledPin, True)
 
 		#alert text
 		if self.AlertOn:
 			print "Set Output Off"
 	
-	def flash(self,time=3,SleepTime=1):
-		print self.ledPin+" Pin Starting flash... "
-		for i in range(time):
+	def flash(self,rtime=3,SleepTime=1):
+		print str(self.ledPin)+" Pin Starting flash... "
+		for i in range(rtime):
 
 		  print "Set Output True"
-		  GPIO.output(self.ledPin, True)
+		  GPIO.output(self.ledPin, False)
 		  time.sleep(SleepTime)
 
 		  print "Set Output False"
-		  GPIO.output(self.ledPin, False)
+		  GPIO.output(self.ledPin, True)
 		  time.sleep(SleepTime)
 
 		#alert text
 		if self.AlertOn:
 			print "Set Output Off"
 
+#main program
 pin = GpioForLights(sys.argv[1],1)
-if sys.argv[2] == 0:
+
+
+if sys.argv[2] == "off":
 	pin.off()
-elif sys.argv[2] == 1:
+elif sys.argv[2] == "on":
 	pin.on()
-elif sys.argv[2] == 2:
+elif sys.argv[2] == "f":
 	pin.flash()
 else:
 	print "not Found Command"
-
-
