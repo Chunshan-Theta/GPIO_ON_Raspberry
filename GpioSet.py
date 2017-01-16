@@ -13,7 +13,7 @@ def SetCreat(JsonData):
 	
 	return PinSet
 
-JsonData = json.loads('[{"pin":"7","GPIO":"4","Cost":"20","Device":"風扇"},{"pin":"11","GPIO":"17","Cost":"20","Device":"監視器"},{"pin":"12","GPIO":"18","Cost":"20","Device":"電燈"}]')
+JsonData = json.loads('[{"id":"0","pin":"7","GPIO":"4","Cost":"20","Device":"風扇"},{"id":"1","pin":"11","GPIO":"17","Cost":"20","Device":"監視器"},{"id":"2","pin":"12","GPIO":"18","Cost":"20","Device":"電燈"}]')
 GpioSet = SetCreat(JsonData)
 for i in GpioSet:
 	i.on()
