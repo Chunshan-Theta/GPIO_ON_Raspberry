@@ -31,13 +31,13 @@ class GpioForLights:
 		
 		#alert text
 		if self.AlertOn:
-			print "Set Output On"
+			print str(self.ledPin)+" pin Set Output On"
 	def off(self):		
   		GPIO.output(self.ledPin, True)
 		
 		#alert text
 		if self.AlertOn:
-			print "Set Output Off"
+			print str(self.ledPin)+" pin Set Output Off"
 	
 	def flash(self,rtime=3,SleepTime=1):
 		print str(self.ledPin)+" Pin Starting flash... "
