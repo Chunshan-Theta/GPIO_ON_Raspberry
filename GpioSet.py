@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+# GpioSet.py	
+# - control a set of GPIO.
+# - using Json config to create that.
 import GPIO24 as gpio
 import json
 
