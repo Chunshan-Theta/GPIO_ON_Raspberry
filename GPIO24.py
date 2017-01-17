@@ -1,4 +1,9 @@
 #!/usr/bin/python
+#GPIO24.py	            
+# - made RPi to a object for light  
+# - could use it to enable and close electic by GPIO
+# - fonction : on , off , flash and clean
+
 import RPi.GPIO as GPIO
 import time
 import sys
