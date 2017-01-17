@@ -1,4 +1,7 @@
 #!/usr/bin/python
+#GpioForLight.py	
+# - control GPIO using command 
+# - argv:PIN NUMBER , action cmd(on,off,flash)
 import RPi.GPIO as GPIO
 import time
 import sys
@@ -62,7 +65,7 @@ if sys.argv[2] == "off":
 	pin.off()
 elif sys.argv[2] == "on":
 	pin.on()
-elif sys.argv[2] == "f":
+elif sys.argv[2] == "flash":
 	pin.flash()
 else:
 	print "not Found Command"
