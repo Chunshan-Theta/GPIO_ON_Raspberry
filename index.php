@@ -1,5 +1,9 @@
 <!doctype html>
-<!--  insert gpio setting to sql using php UI -->
+<!--  
+index.php
+ - insert Json data that recorded gpio setting to Mysql .
+ - It's a UI. 
+-->
 <html>
    <head>
    </head>
