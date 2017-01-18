@@ -25,7 +25,7 @@ PhpGpioControler.php
  - renew view to add GPIO button and lock config
  - exec cmd using ajax 
  
- GpioCMD.php
+GpioCMD.php
  - controler GPIO using php like on and off
  - argv:
  - action & PinNum
