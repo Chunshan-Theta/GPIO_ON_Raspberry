@@ -18,3 +18,9 @@ RJ.php
 index.php
  - insert Json data that recorded gpio setting to Mysql
  - It's a UI 
+
+PhpGpioControler.php
+ - It's a UI for set gpio initialization
+ - made a config data that Json element from UI
+ - renew view to add GPIO button and lock config
+ - exec cmd using ajax 
