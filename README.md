@@ -24,6 +24,7 @@ PhpGpioControler.php
  - made a config data that Json element from UI
  - renew view to add GPIO button and lock config
  - exec cmd using ajax 
+ 
  GpioCMD.php
  - controler GPIO using php like on and off
  - argv:
