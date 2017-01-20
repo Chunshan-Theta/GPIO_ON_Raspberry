@@ -1,8 +1,8 @@
-<!-- Output GPIO setting from sql -->
-<!-- source: https://github.com/Chunshan-Theta/SQLCmdUsingPHP/blob/master/GET_SearchData.php -->
 <?php
+	// Output GPIO setting from sql 
+	// source: https://github.com/Chunshan-Theta/SQLCmdUsingPHP/blob/master/GET_SearchData.php 
 	$dbname = "gpio";
-	$hostIP = "140.130.36.221";
+	$hostIP = "127.0.0.1";
 	$user = "theta";
 	$password = "theta";
 	//SQL command
@@ -27,7 +27,7 @@
 		$result = Search_mysqlQuery($c,$dbname,$hostIP,$user,$password);
 
 		#$result = json_encode($result);
-		print_r($result["0"]->setting);
+		echo json_encode(json_decode($result["0"]->setting));
 
 		
 	}
