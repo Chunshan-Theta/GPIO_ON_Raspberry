@@ -29,3 +29,6 @@ GpioCMD.php
  - controler GPIO using php like on and off
  - argv:
  - action & PinNum
+ 
+SQLSstructure.sql
+ - It's SQL structure and sample data for index.php and RJ.php
