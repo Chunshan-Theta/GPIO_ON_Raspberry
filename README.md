@@ -1,6 +1,6 @@
 # GPIO_ON_Raspberry
 GPIO24.py	            
- - made RPi to a object for light.
+ - made RPi's GPIO to a object for light.
  - could use it to enable and close electic by GPIO.
  - fonction : on , off , flash and clean
 
