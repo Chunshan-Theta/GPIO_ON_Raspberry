@@ -6,28 +6,34 @@ import GPIO24 as gpio
 import json
 
 class GpioSet:
-	def __init__(self,JsonData):
-		self.Set = self.SetCreat(JsonData)
+	def __init__(self,JsonData,Alert=0):
+		self.Set,self.Devices,self.Cost = self.SetCreat(JsonData,Alert)
 		
-	def SetCreat(self,JsonData):
+		
+	def SetCreat(self,JsonData,Alert):
 		PinSet = []
+		PinSetDevice = []
+		PinSetCost = []
 		for d in JsonData:
 			#pin = GpioForLights("PinNum",1)
 			#PinSet.append(d['pin'])
-			PinSet.append(gpio.GpioForLights(d['pin'],1))
+			if d['Device'] != "null":
+				PinSet.append(gpio.GpioForLights(d['pin'],Alert))
+				PinSetDevice.append(d['Device'])
+				PinSetCost.append(d['Cost'])
 		#for i in PinSet:
 		#	print "PinSet"+i
 	
-		return PinSet
+		return PinSet,PinSetDevice,PinSetCost
 
 
 
-JsonData = json.loads('[{"id":"0","pin":"7","GPIO":"4","Cost":"20","Device":"風扇"},{"id":"1","pin":"11","GPIO":"17","Cost":"20","Device":"監視器"},{"id":"2","pin":"12","GPIO":"18","Cost":"20","Device":"電燈"}]')
-mainarray = GpioSet(JsonData).Set
-for i in mainarray:
-	i.on()
-for i in mainarray:
-	i.clean()
+#JsonData = json.loads('[{"id":"0","pin":"7","GPIO":"4","Cost":"20","Device":"風扇"},{"id":"1","pin":"11","GPIO":"17","Cost":"20","Device":"監視器"},{"id":"2","pin":"12","GPIO":"18","Cost":"20","Device":"電燈"}]')
+#mainarray = GpioSet(JsonData).Set
+#for i in mainarray:
+#	i.on()
+#for i in mainarray:
+#	i.clean()
 
 
 #for d in JsonData:
