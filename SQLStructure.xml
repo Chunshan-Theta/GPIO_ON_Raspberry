@@ -57,9 +57,6 @@
 </key>
 </table>
 <table x="793" y="139" name="User">
-<row name="id" null="1" autoincrement="1">
-<datatype>INTEGER</datatype>
-<default>NULL</default></row>
 <row name="User_Id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -70,14 +67,10 @@
 <datatype>VARCHAR(255)</datatype>
 <default>NULL</default></row>
 <key type="PRIMARY" name="">
-<part>id</part>
+<part>User_Id</part>
 </key>
 </table>
-<table x="181" y="185" name="DeviceData">
-<row name="id" null="1" autoincrement="1">
-<datatype>INTEGER</datatype>
-<default>NULL</default><comment>list_id</comment>
-</row>
+<table x="181" y="184" name="DeviceData">
 <row name="Pin_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -88,7 +81,7 @@
 <datatype>VARCHAR(255)</datatype>
 <default>NULL</default></row>
 <key type="PRIMARY" name="">
-<part>id</part>
+<part>Pin_id</part>
 </key>
 </table>
 </sql>
