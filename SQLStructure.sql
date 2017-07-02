@@ -28,10 +28,11 @@ CREATE TABLE `GPIORecord` (
 DROP TABLE IF EXISTS `User`;
 		
 CREATE TABLE `User` (
+  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
   `User_Id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
   `Name` VARCHAR(255) NULL DEFAULT NULL,
   `mail` VARCHAR(255) NULL DEFAULT NULL,
-  PRIMARY KEY (`User_Id`)
+  PRIMARY KEY (`id`)
 );
 
 -- ---
@@ -42,10 +43,11 @@ CREATE TABLE `User` (
 DROP TABLE IF EXISTS `DeviceData`;
 		
 CREATE TABLE `DeviceData` (
+  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL COMMENT 'list_id',
   `Pin_id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
   `cost` INTEGER NULL DEFAULT NULL,
   `Name` VARCHAR(255) NULL DEFAULT NULL,
-  PRIMARY KEY (`Pin_id`)
+  PRIMARY KEY (`id`)
 );
 
 -- ---
@@ -69,7 +71,7 @@ ALTER TABLE `GPIORecord` ADD FOREIGN KEY (User_Id) REFERENCES `User` (`User_Id`)
 
 -- INSERT INTO `GPIORecord` (`id`,`Pin_Id`,`User_Id`,`cmd`) VALUES
 -- ('','','','');
--- INSERT INTO `User` (`User_Id`,`Name`,`mail`) VALUES
--- ('','','');
--- INSERT INTO `DeviceData` (`Pin_id`,`cost`,`Name`) VALUES
--- ('','','');
+-- INSERT INTO `User` (`id`,`User_Id`,`Name`,`mail`) VALUES
+-- ('','','','');
+-- INSERT INTO `DeviceData` (`id`,`Pin_id`,`cost`,`Name`) VALUES
+-- ('','','','');
