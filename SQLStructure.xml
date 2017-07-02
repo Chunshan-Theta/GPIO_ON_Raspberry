@@ -45,23 +45,23 @@
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="DeviceData" row="Pin_id" />
 </row>
-<row name="User_Id" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
-<default>NULL</default><relation table="User" row="User_Id" />
+<row name="User_Id" null="0" autoincrement="0">
+<datatype>VARBINARY(10)</datatype>
+<relation table="User" row="User_Id" />
 </row>
 <row name="cmd" null="1" autoincrement="0">
 <datatype>VARCHAR(200)</datatype>
-<default>NULL</default></row>
+</row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
 </table>
 <table x="793" y="139" name="User">
 <row name="User_Id" null="1" autoincrement="0">
-<datatype>INTEGER</datatype>
+<datatype>VARBINARY(10)</datatype>
 <default>NULL</default></row>
 <row name="Name" null="1" autoincrement="0">
-<datatype>VARCHAR(255)</datatype>
+<datatype>VARCHAR(10)</datatype>
 <default>NULL</default></row>
 <row name="mail" null="1" autoincrement="0">
 <datatype>VARCHAR(255)</datatype>
