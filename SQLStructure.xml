@@ -60,7 +60,7 @@
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
-<row name="User_Id" null="1" autoincrement="1">
+<row name="User_Id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
 <row name="Name" null="1" autoincrement="0">
@@ -78,7 +78,7 @@
 <datatype>INTEGER</datatype>
 <default>NULL</default><comment>list_id</comment>
 </row>
-<row name="Pin_id" null="1" autoincrement="1">
+<row name="Pin_id" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
 <row name="cost" null="1" autoincrement="0">
